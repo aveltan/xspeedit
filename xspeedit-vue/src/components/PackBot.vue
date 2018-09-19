@@ -14,7 +14,7 @@ export default class PackBot extends Vue {
         super();
         this.articlesString = "163841689525773";
         this.packagesList = [];
-        this.packagingResults = "";
+        this.packagingResults = "En attente...";
     }
 
     public onClickRunPackaging() {
@@ -67,18 +67,67 @@ export default class PackBot extends Vue {
 
 <template>
     <div id="packbot">
-        <h1>PackBot</h1>
-        <h2>the packaging robot</h2>
 
-        <input type="text" v-model="articlesString"/>
-        <button @click="onClickRunPackaging">Run packaging</button>
+        <section class="hero is-dark">
+            <div class="hero-body">
+                <h1 class="title is-1">PackBot</h1>
+                <h2 class="subtitle">the packaging robot</h2>
+            </div>
+        </section>
 
-        <h3>Result</h3>
-        <p>{{packagingResults}}</p>
+        <section class="container">
+            <div class="columns">
+
+                <div class="column is-one-fifth">
+                    <!-- margin -->
+                </div>
+
+                <div class="column is-three-fifths is-warning">
+                    
+                    <div class="field is-horizontal">
+                        <input type="text" class="input is-medium" v-model="articlesString"/>
+                        <button @click="onClickRunPackaging" class="button is-medium">
+                            <i class="fa fa-box"></i>
+                        </button>
+                    </div>
+
+                    <div class="card has-text-centered is-wide">
+                        <div class="card-header-title title is-5 ">
+                            <p>Resultat</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="content is-medium">
+                                <p>{{packagingResults}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="column is-one-fifth">
+                    <!-- margin -->
+                </div>
+
+            </div>
+        </section>
+
     </div>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    #packbot {
+        text-align: center;
+    }
+
+    .field {
+        margin: 80px 0px 80px 0px;
+    }
+
+    .card {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 </style>
