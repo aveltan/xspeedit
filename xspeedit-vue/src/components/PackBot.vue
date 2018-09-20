@@ -32,7 +32,7 @@ export default class PackBot extends Vue {
             const packagesList: Package[] = this.runPackaging(articlesList);
             this.packagingResults = this.toStringPackagingResults(packagesList);
         } catch (error) {
-            this.errorMessage = "Vous devez rentrer un nombre.";
+            this.errorMessage = "You must enter a number.";
         }
     }
 
@@ -144,7 +144,7 @@ export default class PackBot extends Vue {
 
         <article v-if="errorMessage" class="message is-danger">
             <div class="message-header">
-                <p>Erreur</p>
+                <p>Error</p>
                 <button @click="onCloseErrorNotification" class="delete" aria-label="delete"></button>
             </div>
             <div class="message-body">
