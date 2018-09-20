@@ -31,7 +31,7 @@ export default class PackBot extends Vue {
             const articlesList: Article[] = this.parseArticlesString(this.articlesString);
             const packagesList: Package[] = this.runPackaging(articlesList);
             this.packagingResults = this.toStringPackagingResults(packagesList);
-        } catch(error) {
+        } catch (error) {
             this.errorMessage = "Vous devez rentrer un nombre.";
         }
     }
@@ -117,7 +117,7 @@ export default class PackBot extends Vue {
                     
                     <div class="field is-horizontal">
                         <input @keyup.enter="onClickRunPackaging" type="text" class="input is-medium" v-model="articlesString"/>
-                        <button @click="onClickRunPackaging" class="button is-medium">
+                        <button @click="onClickRunPackaging" class="button is-medium" title="Run packaging">
                             <i class="fa fa-box"></i>
                         </button>
                     </div>
